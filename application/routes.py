@@ -3,7 +3,6 @@ from application import app, db
 from application.models import Posts
 from application.forms import PostForm
 
-
 @app.route('/')
 @app.route('/home')
 def home():

@@ -5,10 +5,10 @@ class Posts(db.Model):
     first_name = db.Column(db.String(30), nullable=False)
     last_name = db.Column(db.String(30), nullable=False)
     title = db.Column(db.String(100), nullable=False, unique=True)
-    content = db.Column(db.String(100), nullable=False, unique=True)
+    content = db.Column(db.String(500), nullable=False, unique=True)
 
     def __repr__(self):
         return ''.join([
             'User: ', self.first_name, ' ', self.last_name, '\r\n',
             'Title: ', self.title, '\r\n', self.content
-        ])
+            ])
