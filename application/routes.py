@@ -4,9 +4,10 @@ from application.models import Posts
 from application.forms import PostForm
 
 @app.route('/')
+
 @app.route('/home')
 def home():
-	postData = Posts.query.all()
+    postData = Posts.query.all()
     return render_template('home.html', title='Home', posts=dummyData)
 
 @app.route('/about')
@@ -34,8 +35,6 @@ def post():
         db.session.commit()
 
         return redirect(url_for('home'))
-
     else:
         print(form.errors)
-
     return render_template('post.html', title='Post', form=form)
